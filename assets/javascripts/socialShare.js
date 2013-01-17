@@ -28,7 +28,7 @@ $('#clickable').socialShare({
         title: document.title,
         shareUrl: window.location.href,
         description: $('meta[name="description"]').attr('content'),
-        animation: 'launchpad', // launchpad, launchpadReverse, slideTop, slideRight, slideBottom, slideLeft, chain
+        animation: 'chain', // launchpad, launchpadReverse, slideTop, slideRight, slideBottom, slideLeft, chain
         chainAnimationSpeed: 100,
         whenSelect: false,
         selectContainer: 'body',
@@ -36,7 +36,7 @@ $('#clickable').socialShare({
       };
       var options = $.extend(true,defaults, options);
 
-      var beforeDivs = '<div class="arthref arthrefSocialShare"><div class="overlay '+options.animation+'"><div class="icon-container"><div class="centered"><ul>';
+      var beforeDivs = '<div class="arthref arthrefSocialShare" onclick="hide()"><div class="overlay '+options.animation+'"><div class="icon-container" style="overflow:scroll;"><div class="centered" s><ul>';
       var afterDivs = '</ul></div></div></div></div>';
 
 
@@ -79,6 +79,10 @@ $('#clickable').socialShare({
           });
 
       });
+
+      function hide() {
+		$('.arthref arthrefSocialShare').remove();
+	}
 
       function getSelected() {
         if(window.getSelection) { return window.getSelection(); }
