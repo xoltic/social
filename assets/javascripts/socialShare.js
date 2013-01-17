@@ -34,7 +34,6 @@ $('#clickable').socialShare({
         selectContainer: 'body',
         blur: false
       };
-
       var options = $.extend(true,defaults, options);
 
       var beforeDivs = '<div class="arthref arthrefSocialShare"><div class="overlay '+options.animation+'"><div class="icon-container"><div class="centered"><ul>';
@@ -113,7 +112,7 @@ $('#clickable').socialShare({
         'reddit': { text: 'Reddit', className: 'aReddit', url: 'http://reddit.com/submit?url={u}&amp;title={t}' },
         'stumbleupon': { text: 'StumbleUpon', className: 'aStumbleUpon', url: 'http://www.stumbleupon.com/submit?url={u}&amp;title={t}' },
         'tumblr': { text: 'Tumblr', className: 'aTumblr', url: 'http://www.tumblr.com/share/link?name={t}&url={u}&description={d}' },
-        'twitter': { text: 'Twitter', className: 'aTwitter', url: 'http://twitter.com/home?status={t}%20{u}' },
+        'twitter': { text: 'Twitter', className: 'aTwitter', url: 'http://twitter.com/home?status={t}%20{u}%20{d}' },
         'windows': { text: 'Windows', className: 'aWindows', url: 'http://profile.live.com/badge?url={u}' },
         'yahoo': { text: 'Yahoo', className: 'aYahoo', url: 'http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u={u}&amp;t={t}' }
         };
@@ -121,7 +120,7 @@ $('#clickable').socialShare({
         var sites = options.social.split(',');
         var listItem = '';
         for (var i = 0; i <= sites.length-1; i++) {
-          siteSettings[ sites[i] ]['url'] = siteSettings[ sites[i] ]['url'].replace('{t}',encodeURI(options.title)).replace('{u}',encodeURI(options.shareUrl)).replace('{d}',encodeURI(options.description));
+          siteSettings[ sites[i] ]['url'] = siteSettings[ sites[i] ]['url'].replace('{t}',encodeURI(options.title)).replace('{u}',encodeURI(options.shareUrl).replace('//','%2F%2F')).replace('{d}',encodeURI(options.description));
           listItem += '<li><a href="'+siteSettings[ sites[i] ]['url'] +'" target="_blank" rel="nofollow" class="'+siteSettings[ sites[i] ]['className'] +'"><span></span></a><span>'+siteSettings[ sites[i] ]['text'] +'</span></li>';
         };
 
