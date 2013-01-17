@@ -112,7 +112,7 @@ $('#clickable').socialShare({
         'pinterest': { text: 'Pinterest', className: 'aPinterest', url: 'http://pinterest.com/pin/create/button/?url={u}&amp;description={d}' },
         'reddit': { text: 'Reddit', className: 'aReddit', url: 'http://reddit.com/submit?url={u}&amp;title={t}' },
         'stumbleupon': { text: 'StumbleUpon', className: 'aStumbleUpon', url: 'http://www.stumbleupon.com/submit?url={u}&amp;title={t}' },
-        'tumblr': { text: 'Tumblr', className: 'aTumblr', url: 'http://www.tumblr.com/share/link?url={u}&name={t}&description={d}' },
+        'tumblr': { text: 'Tumblr', className: 'aTumblr', url: 'http://www.tumblr.com/share/link?name={t}&url={u}&description={d}' },
         'twitter': { text: 'Twitter', className: 'aTwitter', url: 'http://twitter.com/home?status={t}%20{u}' },
         'windows': { text: 'Windows', className: 'aWindows', url: 'http://profile.live.com/badge?url={u}' },
         'yahoo': { text: 'Yahoo', className: 'aYahoo', url: 'http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u={u}&amp;t={t}' }
